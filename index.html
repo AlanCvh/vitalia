@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vitalia — Tu médico, desde donde estés</title>
+  <meta name="description" content="Prototipo de demostración de Vitalia, plataforma de telemedicina para Guatemala.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%231F6F5C'/%3E%3Cpath d='M16 7c-4.5 3.2-6.5 7-6.5 10.5a6.5 6.5 0 0 0 13 0C22.5 14 20.5 10.2 16 7z' fill='%23DCEDE7'/%3E%3Cpath d='M16 13v9M11.5 17.5h9' stroke='%231F6F5C' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="franja-demo">Prototipo de demostración — datos ficticios</div>
+
+  <header class="encabezado">
+    <div class="contenedor encabezado-interno">
+      <a class="logo" href="#/" aria-label="Vitalia, ir al inicio">
+        <svg class="logo-marca" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1F6F5C"/><path d="M16 7c-4.5 3.2-6.5 7-6.5 10.5a6.5 6.5 0 0 0 13 0C22.5 14 20.5 10.2 16 7z" fill="#DCEDE7"/><path d="M16 13v9M11.5 17.5h9" stroke="#1F6F5C" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span>Vitalia</span>
+      </a>
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menú">
+        <svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path class="menu-abrir" d="M4 6h16M4 12h16M4 18h16"/><path class="menu-cerrar" d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <nav class="nav" id="nav-principal" aria-label="Principal">
+        <a href="#/medicos" data-nav="/medicos">Médicos</a>
+        <a href="#/planes" data-nav="/planes">Planes</a>
+        <a href="#/empresa" data-nav="/empresa">Para empresas</a>
+        <a href="#/expediente" data-nav="/expediente">Mi expediente</a>
+        <a href="#/entrar" class="btn btn-entrar" id="btn-entrar">Entrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <footer class="pie">
+    <div class="contenedor pie-grid">
+      <div>
+        <a class="logo logo-pie" href="#/">
+          <svg class="logo-marca" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#DCEDE7"/><path d="M16 7c-4.5 3.2-6.5 7-6.5 10.5a6.5 6.5 0 0 0 13 0C22.5 14 20.5 10.2 16 7z" fill="#1F6F5C"/><path d="M16 13v9M11.5 17.5h9" stroke="#DCEDE7" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <span>Vitalia</span>
+        </a>
+        <p>Telemedicina con médicos colegiados para todo el país.</p>
+        <p>Escríbenos por WhatsApp: <strong>+502 5555 0123</strong> (número ficticio)</p>
+      </div>
+      <div>
+        <h2 class="pie-titulo">Pacientes</h2>
+        <ul>
+          <li><a href="#/medicos">Buscar médico</a></li>
+          <li><a href="#/planes">Planes</a></li>
+          <li><a href="#/expediente">Mi expediente</a></li>
+          <li><button type="button" class="enlace" data-abrir-privacidad>Aviso de privacidad</button></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="pie-titulo">Demostración</h2>
+        <ul>
+          <li><a href="#/panel-medico">Panel del médico</a></li>
+          <li><a href="#/empresa">Panel de empresa</a></li>
+          <li><a href="#/kpis">Métricas del proyecto</a></li>
+        </ul>
+        <button type="button" class="btn btn-reiniciar" id="btn-reiniciar">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v6h6M20 20v-6h-6M5.5 15a7.5 7.5 0 0 0 13 2.5M18.5 9A7.5 7.5 0 0 0 5.5 6.5"/></svg>
+          Reiniciar demo
+        </button>
+      </div>
+    </div>
+    <div class="pie-franja">Prototipo de demostración — datos ficticios. Proyecto académico, no es un servicio real.</div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="dlg-privacidad" class="dialogo" aria-labelledby="dlg-titulo">
+    <h2 id="dlg-titulo">Aviso de privacidad</h2>
+    <p>Vitalia usa tus datos solo para brindarte atención médica: agendar consultas, emitir recetas y mantener tu expediente.</p>
+    <ul>
+      <li>Tu expediente está cifrado y solo lo ven los médicos que te atienden.</li>
+      <li>Nunca vendemos tus datos. Las empresas afiliadas solo ven estadísticas agregadas.</li>
+      <li>Puedes pedir una copia o la eliminación de tus datos en cualquier momento.</li>
+    </ul>
+    <p class="nota">Texto de ejemplo para el prototipo.</p>
+    <button type="button" class="btn" data-cerrar>Entendido</button>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/router.js"></script>
+</body>
+</html>
